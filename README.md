@@ -1,8 +1,5 @@
-# Asteroid-Assignment-Base
-Initial skeleton for the assignment (semester-2 2016/17)
-
-This is the starting point for the Semester 2 assignment.
-The asteroids directory has a sample set of code to start with.
+# Asteroid-Assignment
+Almost complete assignment submission (06/05/2017)
 
 ## asteroids
 asteroids.cpp:
@@ -11,13 +8,13 @@ asteroids.h:
   This exports the global varables for use in other modules
   
 ## controller
-base code for the controller, user interface for the 
+code for the controller
 
 ## view
-base code for the view (graphics)
+code for the view (graphics)
 
 ## model 
 model.cpp:
- Base code for the model of the game (in my solution the arrays used for all the objects are in here).
+ code for the model of the game
  All the logic for moving and interactions of objects.
  
