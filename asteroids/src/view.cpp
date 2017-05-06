@@ -20,29 +20,29 @@
 extern "C" uint8_t flip(uint8_t);
 
 Display *graphics = Display::theDisplay();
-void drawSideBar(int score, float elapsed_time, int lives);
-void drawShip(struct ship);
-void transformShape();
-void drawMissiles(struct missile *lst);
-void drawRocks(struct rock *lst);
+static void drawSideBar(int score, float elapsed_time, int lives);
+static void drawShip(struct ship);
+static void transformShape();
+static void drawMissiles(struct missile *lst);
+static void drawRocks(struct rock *lst);
 
 uint8_t flip(uint8_t); //assembly function for flipping image bit pattern
-void rock_flip();
-unsigned char flippedRock[200];
+static void rock_flip();
+static unsigned char flippedRock[200];
 
 float currentHeadingForAllMissiles;
 
 
-const colour_t background = rgb(0,51,102); /* Midnight Blue */
-const colour_t missileColour = rgb(255,51,51); /* Red */
-const colour_t shipColour = rgb(0,255,0); /* Green */
-const colour_t asteroidColour = rgb(64,64,64); /* Grey */
+static const colour_t background = rgb(0,51,102); /* Midnight Blue */
+static const colour_t missileColour = rgb(255,51,51); /* Red */
+static const colour_t shipColour = rgb(0,255,0); /* Green */
+static const colour_t asteroidColour = rgb(64,64,64); /* Grey */
 
 
-const coordinate_t shape[] = {
+static const coordinate_t shape[] = {
     {0.0f,-10.0f}, {5.0f,5.0f}, {-5.0f,5.0f}
 };
-coordinate_t transformedShip[3];
+static coordinate_t transformedShip[3];
 
 
 
@@ -96,18 +96,6 @@ void drawSideBar(int score, float elapsed_time, int lives){
 	
 	graphics->setCursor(405,155);
 	graphics->printf("by R.Endeley");
-	
-	
-	//testing stuff
-	graphics->setCursor(405,200);
-	graphics->printf("Heading: %.0f", player.heading);	
-	graphics->setCursor(405,215);
-	graphics->printf("x: %.0f", player.p.x);
-	graphics->setCursor(405,230);
-	graphics->printf("y: %.0f", player.p.y);
-
-
-	
 }
 
 void drawShip(struct ship){

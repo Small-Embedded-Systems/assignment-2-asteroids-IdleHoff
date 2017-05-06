@@ -50,7 +50,7 @@ int main()
     
     	
     while(true) {			
-			initialiseGame();		
+			initialiseGame();
 			while (lives > 0){
 				pauseToStart();
 				inPlay = true;
