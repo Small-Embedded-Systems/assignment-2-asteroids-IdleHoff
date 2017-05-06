@@ -3,6 +3,7 @@
 extern float elapsed_time; /* time this ship has been active */
 extern int   score;        /* total score so far */
 extern int   lives;        /* lives remaining */
+extern bool  paused;			 
 
 extern struct ship player;
 

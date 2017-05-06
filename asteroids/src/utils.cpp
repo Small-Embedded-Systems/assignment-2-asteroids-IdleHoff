@@ -29,7 +29,7 @@ int randrange(int from, int to)
     return from + rand()%range;
 }
 
-/* Convery degrees to radians */
+/* Convert degrees to radians */
 const float pi = 3.1415926f;
-float radians(float degrees) { return degrees/180*pi; }
+float radians(float degrees) { return pi*(degrees/180); }
 

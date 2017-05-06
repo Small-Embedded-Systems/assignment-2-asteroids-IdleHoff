@@ -1,7 +1,7 @@
 /* Asteroids
-    Sample solution for assignment
+    Solution for assignment
     Semester 2 -- Small Embedded Systems
-    Dr Alun Moon
+    Ranti Endeley
 */
 
 /* C libraries */
@@ -21,10 +21,14 @@
 #include "controller.h"
 
 /* Game state */
-float elapsed_time; 
-int   score;
-int   lives;
+float elapsed_time = 0.0f; 
+int   score = 0;
+int   lives = 5;
 struct ship player;
+struct missile *shots = NULL;
+struct rock *asteroids = NULL;
+void pauseToStart();
+void initialiseGame();
 
 float Dt = 0.01f;
 
@@ -39,32 +43,42 @@ int main()
     init_DBuffer();
     
 
-    view.attach( draw, 0.025);
-    model.attach( physics, Dt);
-    controller.attach( controls, 0.1);
+    view.attach( draw, 0.055 );
+    model.attach( physics, Dt );
+    controller.attach( controls, 0.1 );
     
-    lives = 5;
+		initialiseGame();
     
-    /* Pause to start */
+		pauseToStart();
+	
+    while(true) {			
+        //Wait until all lives have been used
+        while(lives > 0){
+					if (paused){//i.e. a life has just ended
+						pauseToStart();
+						initialiseGame();
+					}
+					wait_ms(200);
+        }
+				if (lives == 0) gameover();
+    }
+}
+
+void initialiseGame(){
+  player.p.x = 200;//put in the middle
+	player.p.y = 136;
+	player.v.x = 0; //stationery
+	player.v.y = 0; //stationary
+	player.heading = 0.0;
+	initialise_missiles();
+	initialise_asteroids();
+}
+
+void pauseToStart(){
     while( userbutton.read() ){ /* remember 1 is not pressed */
         paused=true;
         wait_ms(100);
     }
-    paused = false;
-    
-    while(true) {
-        /* do one of */
-        /* Wait until all lives have been used
-        while(lives>0){
-            // possibly do something game related here
-            wait_ms(200);
-        }
-        */
-        /* Wait until each life is lost
-        while( inPlay ){
-            // possibly do something game related here
-            wait_ms(200);
-        }
-        */
-    }
+    paused = false;	
 }
+
