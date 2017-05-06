@@ -114,7 +114,6 @@ void drawShip(struct ship){
 	graphics->drawLine(player.p.x+transformedShip[0].x, player.p.y+transformedShip[0].y, player.p.x+transformedShip[1].x, player.p.y+transformedShip[1].y, shipColour);
 	graphics->drawLine(player.p.x+transformedShip[1].x, player.p.y+transformedShip[1].y, player.p.x+transformedShip[2].x, player.p.y+transformedShip[2].y, shipColour);
 	graphics->drawLine(player.p.x+transformedShip[2].x, player.p.y+transformedShip[2].y, player.p.x+transformedShip[0].x, player.p.y+transformedShip[0].y, shipColour);
-	currentHeadingForAllMissiles = player.heading;
 }
 
 void transformShape(){

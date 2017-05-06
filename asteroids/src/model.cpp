@@ -109,7 +109,7 @@ void fire(){
 
 /*construct new missile*/
 void new_missile(struct missile *r){
-	r->heading = currentHeadingForAllMissiles;
+	r->heading = player.heading;
 	
 	r->p.x = player.p.x;
 	r->p.y = player.p.y;
