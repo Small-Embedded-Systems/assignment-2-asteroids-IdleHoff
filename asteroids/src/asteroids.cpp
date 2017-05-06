@@ -29,6 +29,7 @@ struct missile *shots = NULL;
 struct rock *asteroids = NULL;
 void pauseToStart();
 void initialiseGame();
+bool inPlay;
 
 float Dt = 0.01f;
 
@@ -47,20 +48,17 @@ int main()
     model.attach( physics, Dt );
     controller.attach( controls, 0.1 );
     
-		initialiseGame();
-    
-		pauseToStart();
-	
+    	
     while(true) {			
-        //Wait until all lives have been used
-        while(lives > 0){
-					if (paused){//i.e. a life has just ended
-						pauseToStart();
-						initialiseGame();
+			initialiseGame();		
+			while (lives > 0){
+				pauseToStart();
+				inPlay = true;
+					while(inPlay){
+							
 					}
-					wait_ms(200);
-        }
-				if (lives == 0) gameover();
+			}			
+			gameover();
     }
 }
 

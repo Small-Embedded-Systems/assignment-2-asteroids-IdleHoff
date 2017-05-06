@@ -41,7 +41,7 @@ void physics(void)
 			move_asteroids(asteroids, Dt);
 			missiles_hit_rocks(shots, asteroids);
 			if(ship_hit_rocks(asteroids)){
-				paused = true;
+				inPlay = false;
 				score += (int) elapsed_time;
 				lives--;
 			}
@@ -289,6 +289,7 @@ void missiles_hit_rocks(struct missile *l, struct rock *k){
 					//remove missile and remove asteroid
 					l->ttl = 0;
 					k->ttl = 0;
+					score += 5; //5 points for each asteroid shot
 			}
 		}
 	}

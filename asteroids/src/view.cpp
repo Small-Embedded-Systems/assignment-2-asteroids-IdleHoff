@@ -28,7 +28,7 @@ void drawRocks(struct rock *lst);
 
 uint8_t flip(uint8_t); //assembly function for flipping image bit pattern
 void rock_flip();
-uint8_t flippedRock[200];
+unsigned char flippedRock[200];
 
 float currentHeadingForAllMissiles;
 
@@ -148,5 +148,6 @@ void rock_flip(){
 }
 
 void gameover(){
-	
+	graphics->setCursor(182,150);
+	graphics->printf("GAME OVER - FINAL SCORE: %d", score); 
 }

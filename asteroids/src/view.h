@@ -6,6 +6,7 @@ void swap_DBuffer(void);
 void draw(void);
 void gameover();
 extern float currentHeadingForAllMissiles;
+extern bool inPlay;
 
 #define asteroid_width 40
 #define asteroid_height 40
