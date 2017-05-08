@@ -55,7 +55,7 @@ int main()
 				pauseToStart();
 				inPlay = true;
 					while(inPlay){
-							
+							//increment score here?
 					}
 			}			
 			gameover();
