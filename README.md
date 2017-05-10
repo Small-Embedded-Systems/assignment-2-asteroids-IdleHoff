@@ -1,5 +1,5 @@
 # Asteroid-Assignment
-Almost complete assignment submission (06/05/2017)
+CM0506 Assignment submission (10/05/2017) - By Ranti Endeeley (W15035209)
 
 ## asteroids
 asteroids.cpp:
@@ -18,3 +18,9 @@ model.cpp:
  code for the model of the game
  All the logic for moving and interactions of objects.
  
+## Future refactoring possibilities
+-Additional images/bitmaps (Title Screen, Game over screen)
+-Fix scoring
+-Update and refine ship, asteroids and missiles
+-refactor all code to reduce complexity
+-add comments and general clean-up
