@@ -10,6 +10,8 @@ struct ship {
 	  float heading;
     coordinate_t p;
     vector_t     v;
+		int		 shield;
+	  int shipScore;
 };
 
 /* initial structs for building linked lists */

@@ -41,9 +41,14 @@ void physics(void)
 			move_asteroids(asteroids, Dt);
 			missiles_hit_rocks(shots, asteroids);
 			if(ship_hit_rocks(asteroids)){
-				inPlay = false;
-				score += (int) elapsed_time;
-				lives--;
+				if (player.shield <= 0){
+					inPlay = false;
+					score += (int) elapsed_time;
+					lives--;
+				}
+				else {
+					player.shield--;
+				}
 			}
 			update_missile_list(shots);
 			update_rock_list(asteroids);

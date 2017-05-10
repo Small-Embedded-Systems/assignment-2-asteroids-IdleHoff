@@ -93,12 +93,41 @@ void drawSideBar(int score, float elapsed_time, int lives){
 	graphics->printf("Time : %.2f", elapsed_time);
 	graphics->setCursor(405,85);
 	graphics->printf("Lives: %d", lives);
-	
+	graphics->setCursor(405, 105);
+	graphics->printf("Shield: ");
+	graphics->setCursor(405, 115);
+	switch (player.shield){
+		case 3:
+			graphics->printf("GREEN");
+			break;
+		case 2:
+			graphics->printf("YELLOW");
+			break;		
+		case 1:
+			graphics->printf("RED");
+			break;		
+		case 0:
+			graphics->printf("NO SHIELD!");
+			break;	
+	}
 	graphics->setCursor(405,155);
 	graphics->printf("by R.Endeley");
 }
 
 void drawShip(struct ship){
+	switch (player.shield){
+		case 3:
+			graphics->drawCircle(player.p.x, player.p.y, 10, GREEN);
+			break;
+		case 2:
+			graphics->drawCircle(player.p.x, player.p.y, 10, YELLOW);
+			break;		
+		case 1:
+			graphics->drawCircle(player.p.x, player.p.y, 10, RED);
+			break;		
+		case 0:
+			//do nothing
+			break;	}
 	graphics->drawLine(player.p.x+transformedShip[0].x, player.p.y+transformedShip[0].y, player.p.x+transformedShip[1].x, player.p.y+transformedShip[1].y, shipColour);
 	graphics->drawLine(player.p.x+transformedShip[1].x, player.p.y+transformedShip[1].y, player.p.x+transformedShip[2].x, player.p.y+transformedShip[2].y, shipColour);
 	graphics->drawLine(player.p.x+transformedShip[2].x, player.p.y+transformedShip[2].y, player.p.x+transformedShip[0].x, player.p.y+transformedShip[0].y, shipColour);

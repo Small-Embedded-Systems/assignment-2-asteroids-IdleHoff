@@ -68,6 +68,7 @@ void initialiseGame(){
 	player.v.x = 0; //stationery
 	player.v.y = 0; //stationary
 	player.heading = 0.0;
+	player.shield = 3;
 	initialise_missiles();
 	initialise_asteroids();
 }
