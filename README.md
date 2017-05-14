@@ -1,5 +1,5 @@
 # Asteroid-Assignment
-CM0506 Assignment submission (10/05/2017) - By Ranti Endeeley (W15035209)
+CM0506 Assignment submission (10/05/2017) - By Ranti Endeley (W15035209)
 
 ## asteroids
 asteroids.cpp:
